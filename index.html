@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
+	<script src="word-writer.js"></script>
+	<style>
+		body {
+			background-color: #303337;
+		}
+		h1 {
+			text-align: center;
+			font-family: "微软雅黑";
+			color: #EEE;
+		}
+		#main {
+			width: 80%;
+			padding: 15px;
+			margin: 30px auto;
+			border: 1px solid #CCC;
+			text-align: center;
+			font-size: 20px;
+			font-weight: 200;
+			font-family: "微软雅黑";
+			color: #EEE;
+		}
+	</style>
+</head>
+<body>
+	<h1>稻米鼠的打字机效果插件</h1>
+	<div id="main"></div>
+	<script>
+		$(document).ready(function(){
+			var selector = $("#main");
+			var WW = new Word_Writer(selector);
+			WW.words = Array(
+				"这里写我们要显示的内容，",
+				"|",
+				"\\|",
+				"===",
+				"|",
+				"上一行的竖线，表示清空当前输入的所有内容，",
+				"|",
+				"\\<<<>>>",
+				"===",
+				"|",
+				"方括号是移动光标，每一个表示移动一个字符，",
+				"<<<<<<<<",
+				"|",
+				"至于移动的方向，我想你们那么聪明一定都懂得的，",
+				"|",
+				"\\---",
+				"===",
+				"|",
+				"每一个减号可以删除光标前一个字符，",
+				"<<<<<----",
+				"|",
+				"\\====",
+				"===",
+				"|",
+				"每一个等号表示，在当前状态停留一定的时间，等号越多停留的时间自然越长，",
+				"============",
+				"|",
+				"如果希望正常显示出上述符号，则可以使用双斜线(\\\\)开始该行，",
+				"|",
+				"最后本插件可以很好的输出 HTML 代码的内容，",
+				"|",
+				"<p>例如这里代码可以直接显示出来，而不会被解释.</p>",
+				"======"
+			);
+			WW.gbColor = "#5297CA";
+			WW.WriteNow();
+		});
+	</script>
+</body>
+</html>
